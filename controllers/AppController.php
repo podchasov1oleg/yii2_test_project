@@ -8,5 +8,5 @@ use yii\web\Controller;
 
 class AppController extends Controller
 {
-
+    public $layout = 'grocery';
 }
