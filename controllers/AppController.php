@@ -9,4 +9,11 @@ use yii\web\Controller;
 class AppController extends Controller
 {
     public $layout = 'grocery';
+
+    public function beforeAction($action)
+    {
+        $this->view->title = \Yii::$app->name;
+
+        return parent::beforeAction($action);
+    }
 }
