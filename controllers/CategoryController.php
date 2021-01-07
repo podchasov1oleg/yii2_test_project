@@ -22,6 +22,12 @@ class CategoryController extends AppController
 
         $breadcrumbs = array_reverse(MenuWidget::getBreadcrumbs($category->id));
 
+        $this->setMeta(
+            "{$category->title} :: " . \Yii::$app->name,
+            $category->keywords,
+            $category->description
+        );
+
         return $this->render('view', compact('products', 'category', 'breadcrumbs'));
     }
 }
