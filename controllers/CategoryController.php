@@ -7,6 +7,7 @@ namespace app\controllers;
 use app\components\MenuWidget;
 use app\models\Category;
 use app\models\Product;
+use yii\data\Pagination;
 use yii\web\NotFoundHttpException;
 
 class CategoryController extends AppController
@@ -18,7 +19,17 @@ class CategoryController extends AppController
             throw new NotFoundHttpException("Такой категории нет");
         }
 
-        $products = Product::find()->where(['category_id' => $id])->all();
+        $query = Product::find()->where(['category_id' => $id]);
+        $countQuery = clone $query;
+        $pages = new Pagination([
+            'totalCount' => $countQuery->count(),
+            'pageSize' => 4,
+            'forcePageParam' => false,
+            'pageSizeParam' => false
+        ]);
+        $products = $query->offset($pages->offset)
+            ->limit($pages->limit)
+            ->all();
 
         $breadcrumbs = array_reverse(MenuWidget::getBreadcrumbs($category->id));
 
@@ -28,6 +39,6 @@ class CategoryController extends AppController
             $category->description
         );
 
-        return $this->render('view', compact('products', 'category', 'breadcrumbs'));
+        return $this->render('view', compact('products', 'category', 'breadcrumbs', 'pages'));
     }
 }

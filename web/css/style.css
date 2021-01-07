@@ -1703,6 +1703,24 @@ ol {
 h2.typoh2{
     margin: 0 0 10px;
 }
+
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+	background-color: red;
+	border-color: red
+}
+
+.pagination > li > a, .pagination > li > span {
+	color: red;
+}
+
+.pagination > .disabled > span, .pagination > .disabled > span:hover, .pagination > .disabled > span:focus, .pagination > .disabled > a, .pagination > .disabled > a:hover, .pagination > .disabled > a:focus {
+	color: #ff9a9a;
+}
+
+.pagination > li > a:hover, .pagination > li > span:hover, .pagination > li > a:focus, .pagination > li > span:focus {
+	color: #bc0000;
+}
+
 @media (max-width:768px){
 	.grid_5 {
 		padding: 0 0 1em;
