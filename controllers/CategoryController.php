@@ -47,7 +47,7 @@ class CategoryController extends AppController
         $q = trim( \Yii::$app->request->get('q') );
         $this->setMeta("Результаты поиска по фразе {$q} :: " . \Yii::$app->name);
         if (!$q) {
-            return $this->render('search');
+            return $this->render('search', ['pages' => null, 'products' => null, 'q' => null]);
         }
 
         $query = Product::find()->where(['like', 'title', $q]);

@@ -17,7 +17,9 @@
             <h3>Best Deals For New Products<span class="blink_me"></span></h3>
         </div>
         <div class="w3ls_w3l_banner_nav_right_grid">
-            <h3>Поиск: "<?= \yii\helpers\Html::encode($q) ?>"</h3>
+            <? if ( !empty($q) ): ?>
+                <h3>Поиск: "<?= \yii\helpers\Html::encode($q) ?>"</h3>
+            <? endif; ?>
             <?php if (!empty($products)): ?>
                 <div class="w3ls_w3l_banner_nav_right_grid1">
                     <h6>food</h6>
@@ -75,11 +77,13 @@
                         </div>
                     <?php endforeach; ?>
                     <div class="clearfix"></div>
-                    <div class="col-md-12 text-center">
-                        <?= \yii\widgets\LinkPager::widget([
-                            'pagination' => $pages
-                        ]) ?>
-                    </div>
+                    <? if ( !empty($pages) ): ?>
+                        <div class="col-md-12 text-center">
+                            <?= \yii\widgets\LinkPager::widget([
+                                'pagination' => $pages
+                            ]) ?>
+                        </div>
+                    <? endif; ?>
                 </div>
             <?php else: ?>
                 <div class="w3ls_w3l_banner_nav_right_grid1">
