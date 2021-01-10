@@ -65,3 +65,67 @@ paypal.minicart.cart.on('checkout', function (evt) {
         evt.preventDefault();
     }
 });
+
+/* Cart */
+
+function showCart(cart) {
+    $('#modal-basket .modal-body').html(cart);
+    if ( !$('#modal-basket').hasClass('in') ) {
+        $('#modal-basket').modal('show');
+    }
+    let cartSum = $('#js-cart-sum').text() ? $('#js-cart-sum').text() : '$0';
+    if (cartSum) {
+        $('.js-modal-sum').text(cartSum);
+    }
+}
+
+function getCart() {
+    $.get('/cart/show', null)
+        .done(result => {
+            if (!result) alert('Ошибка');
+            showCart(result);
+        })
+        .fail(() => {
+            alert('Error')
+        })
+}
+
+function clearCart() {
+    $.get('/cart/clear', null)
+        .done(result => {
+            if (!result) alert('Ошибка');
+            showCart(result);
+        })
+        .fail(() => {
+            alert('Error')
+        })
+}
+
+$('.js-add-to-cart').click(event => {
+    event.preventDefault();
+
+    let id = $(event.target).data('id');
+    $.get('/cart/add', {id})
+        .done(result => {
+            if (!result) alert('Ошибка');
+            showCart(result);
+        })
+        .fail(() => {
+            alert('Error')
+        });
+});
+
+$('#modal-basket .modal-body').on('click', '.js-del-item', (event) => {
+    let id = $(event.target).data('id');
+
+    $.get('/cart/del-item', {id})
+        .done(result => {
+            if (!result) alert('Ошибка');
+            showCart(result);
+        })
+        .fail(() => {
+            alert('Error')
+        });
+});
+
+/* /Cart */

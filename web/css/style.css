@@ -557,7 +557,7 @@ ul.dropdown-menu.drp-mnu li a i {
 .btn-danger.my-cart-btn:focus {
     outline: none;
 }
-.snipcart-details input.button {
+.snipcart-details .button {
     font-size: 14px;
     color: #fff;
     background: #FA1818;
@@ -567,13 +567,14 @@ ul.dropdown-menu.drp-mnu li a i {
     border-radius: 0;
     width: 100%;
     text-transform: uppercase;
-    padding: .5em 0;
+    padding: .5em;
+	display: block;
     outline: none;
 }
-.agile_top_brand_left_grid:hover .snipcart-details input.button,.snipcart-details input.button:hover{
+.agile_top_brand_left_grid:hover .snipcart-details .button,.snipcart-details .button:hover{
     background: #84C639;
 }
-.product_list_header input.button {
+.product_list_header .button {
     color: #fff;
     font-size: 14px;
     outline: none;
@@ -582,6 +583,7 @@ ul.dropdown-menu.drp-mnu li a i {
     border: 1px solid #84c639;
     margin: .35em 0 0;
     background: url(../images/cart.png) no-repeat 116px 9px;
+	width: 144px;
 }
 #PPMiniCart form {
     width: 590px !important;
@@ -1728,6 +1730,21 @@ img	{
 
 .snipcart-thumb img {
 	max-height: 140px;
+}
+
+#modal-basket .modal-body tbody td img {
+	max-width: 150px;
+}
+
+#modal-basket .modal-body tbody td .js-del-item {
+	color: red;
+	top: 0;
+	cursor: pointer;
+}
+
+.product_list_header button.close span {
+	color: black;
+	top: 0;
 }
 
 @media (max-width:768px){
@@ -3023,7 +3040,7 @@ input.checkbox:checked:after {
 	#PPMiniCart {
 		left: 42% !important;
 	}
-	.snipcart-details input.button {
+	.snipcart-details .button {
 		font-size: 13px;
 	}
 	.w3l_banner_nav_right_banner3_btml h4 {
@@ -3477,7 +3494,7 @@ input.checkbox:checked:after {
 	.w3l_panel_group_faq {
 		margin: 1em 0 0;
 	}
-	.snipcart-details input.button {
+	.snipcart-details .button {
 		font-size: 14px;
 	}
 	.checkout-left-basket {
@@ -4253,7 +4270,7 @@ input.checkbox:checked:after {
 		width: 49.5%;
 		margin: 0;
 	}
-	.product_list_header input.button {
+	.product_list_header .button {
 		margin: 0;
 		padding: .3em 2.5em .3em 1em;
 		background: url(../images/cart.png) no-repeat 116px 5px;
@@ -4822,7 +4839,7 @@ input.checkbox:checked:after {
 		padding-left: 5px !important;
 		font-size: 13px !important;
 	}
-	.snipcart-details input.button {
+	.snipcart-details .button {
 		font-size: 13px;
 	}
 	.w3ls_w3l_banner_nav_right_grid1 h6 {
@@ -4839,7 +4856,7 @@ input.checkbox:checked:after {
 	.form-module {
 		margin: 2em auto 0;
 	}
-	.product_list_header input.button {
+	.product_list_header .button {
 		padding: .3em 2.5em .3em 0.8em;
 		background: url(../images/cart.png) no-repeat 105px 5px;
 		font-size: 13px;
