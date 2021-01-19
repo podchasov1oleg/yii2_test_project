@@ -58,6 +58,16 @@ $config = [
                 'search' => 'category/search',
             ],
         ],
+        'assetManager' => [
+            'bundles' => [
+                'yii\web\JqueryAsset' => [
+                    'sourcePath' => null,   // не опубликовывать комплект
+                    'js' => [
+                        'js/jquery-1.11.1.min.js',
+                    ]
+                ],
+            ],
+        ],
     ],
     'params' => $params,
 ];

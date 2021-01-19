@@ -121,11 +121,31 @@ $('#modal-basket .modal-body').on('click', '.js-del-item', (event) => {
     $.get('/cart/del-item', {id})
         .done(result => {
             if (!result) alert('Ошибка');
-            showCart(result);
+            if (document.location.pathname === '/cart/checkout') {
+                document.location.pathname = 'cart/checkout';
+            } else {
+                showCart(result);
+            }
         })
         .fail(() => {
             alert('Error')
         });
+});
+
+$(".value-minus, .value-plus").on('click', (event) => {
+    let target = $(event.target),
+        id = target.data('id'),
+        qty = target.data('qty');
+
+    $('.cart-table .overlay').fadeIn();
+
+    $.get('/cart/change-cart', {id, qty})
+        .done(result => {
+            if (!result) alert("Ошибка продукта");
+            location = "/cart/checkout";
+        })
+        .fail(() => {alert("Ошибка!")});
+
 });
 
 /* /Cart */

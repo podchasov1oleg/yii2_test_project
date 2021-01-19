@@ -1747,6 +1747,31 @@ img	{
 	top: 0;
 }
 
+.cart-table {
+	position: relative;
+}
+
+.cart-table .overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(255,255,255,.5);
+	z-index: 2;
+	display: none;
+}
+
+.cart-table .overlay .fa {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	font-size: 30px;
+	margin-left: -15px;
+	margin-top: -15px;
+	color: #000;
+}
+
 @media (max-width:768px){
 	.grid_5 {
 		padding: 0 0 1em;

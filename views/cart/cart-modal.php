@@ -16,7 +16,7 @@
                     <td>
                         <?= \yii\helpers\Html::img(
                         "@web/images/{$item['img']}",
-                        ['alt' => $item['name'], 'height' => 50]) ?>
+                        ['alt' => $item['title'], 'height' => 50]) ?>
                     </td>
                     <td><?= $item['title'] ?></td>
                     <td><?= $item['qty'] ?></td>
