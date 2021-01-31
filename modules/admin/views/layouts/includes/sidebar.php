@@ -38,6 +38,21 @@
                     </li>
                 </ul>
             </li>
+            <li class="treeview <?= strpos($this->context->route, 'category/') ? 'menu-open' : '' ?>">
+                <a href="#"><i class="fa fa-cubes"></i> <span>Категории</span>
+                    <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+                </a>
+                <ul class="treeview-menu" <?= strpos($this->context->route, 'category/') ? 'style="display:block"' : '' ?>>
+                    <li class="<?= $this->context->route == 'admin/category/index' ? 'active' : '' ?>">
+                        <a href="<?= \yii\helpers\Url::to(['category/index']) ?>">Список</a>
+                    </li>
+                    <li class="<?= $this->context->route == 'admin/category/create' ? 'active' : '' ?>">
+                        <a href="<?= \yii\helpers\Url::to(['category/create']) ?>">Создать</a>
+                    </li>
+                </ul>
+            </li>
         </ul>
         <!-- /.sidebar-menu -->
     </section>
