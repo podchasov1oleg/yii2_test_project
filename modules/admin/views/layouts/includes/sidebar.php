@@ -39,7 +39,7 @@
                 </ul>
             </li>
             <li class="treeview <?= strpos($this->context->route, 'category/') ? 'menu-open' : '' ?>">
-                <a href="#"><i class="fa fa-cubes"></i> <span>Категории</span>
+                <a href="#"><i class="fa fa-list"></i> <span>Категории</span>
                     <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
@@ -50,6 +50,21 @@
                     </li>
                     <li class="<?= $this->context->route == 'admin/category/create' ? 'active' : '' ?>">
                         <a href="<?= \yii\helpers\Url::to(['category/create']) ?>">Создать</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="treeview <?= strpos($this->context->route, 'product/') ? 'menu-open' : '' ?>">
+                <a href="#"><i class="fa fa-cubes"></i> <span>Товары</span>
+                    <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+                </a>
+                <ul class="treeview-menu" <?= strpos($this->context->route, 'product/') ? 'style="display:block"' : '' ?>>
+                    <li class="<?= $this->context->route == 'admin/product/index' ? 'active' : '' ?>">
+                        <a href="<?= \yii\helpers\Url::to(['product/index']) ?>">Список</a>
+                    </li>
+                    <li class="<?= $this->context->route == 'admin/product/create' ? 'active' : '' ?>">
+                        <a href="<?= \yii\helpers\Url::to(['product/create']) ?>">Создать</a>
                     </li>
                 </ul>
             </li>

@@ -18,7 +18,7 @@ use yii\widgets\ActiveForm;
 
     <div class="form-group field-category-parent_id">
         <label for="category-parent_id" class="control-label">Родительская категория</label>
-        <select name="Category[parent_id]" id="order-status" class="form-control">
+        <select name="Category[parent_id]" id="category-parent_id" class="form-control">
             <option value="0">Самостоятельная категория</option>
             <?= \app\components\MenuWidget::widget([
                 'tpl' => 'select',
