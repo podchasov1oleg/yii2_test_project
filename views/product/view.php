@@ -28,7 +28,7 @@
             <h5><?= $product->title ?></h5>
             <div class="col-md-4 agileinfo_single_left">
                 <?= \yii\helpers\Html::img(
-                    "@web/images/{$product->img}",
+                    "@web/{$product->img}",
                     ['alt' => $product->title, 'id' => 'okzoom']
                 ) ?>
             </div>

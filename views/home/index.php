@@ -90,7 +90,7 @@
                                             <div class="snipcart-thumb">
                                                 <a href="<?= \yii\helpers\Url::to(['product/view', 'id' => $offer->id]) ?>">
                                                     <?= \yii\helpers\Html::img(
-                                                        "@web/images/{$offer->img}",
+                                                        "@web/{$offer->img}",
                                                         ['alt' => $offer->title]
                                                     ) ?>
                                                 </a>
